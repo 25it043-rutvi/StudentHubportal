@@ -75,8 +75,18 @@ document.addEventListener('DOMContentLoaded', () => {
         window.showNotification('Validation Error', 'Please correct the highlighted fields before submitting.', 'danger');
       }
     } else {
-      // Allow submission to continue (e.g. to PHP backend)
-      // If submitting via file/demo mode, can show success
+      // Check if running on GitHub Pages or static environment
+      const isStaticHost = window.location.hostname.includes('github.io') || window.location.protocol === 'file:';
+      
+      if (isStaticHost) {
+        e.preventDefault();
+        alert('Registration Successful!\nAll frontend validation checks passed.');
+        if (window.showNotification) {
+          window.showNotification('Registration Successful', 'All frontend validation checks passed.', 'success');
+        }
+      } else {
+        // Running locally in XAMPP / PHP: allow submission to PHP backend
+      }
     }
   });
 });
