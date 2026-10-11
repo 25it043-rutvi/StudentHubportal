@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "category": "Account",
+    "question": "How do I create a StudentHub account?",
+    "answer": "Click on the 'Register' link in the top navigation bar. Fill in your full name, student email, mobile number, course, year, and a secure password. Once submitted, your profile will be created instantly."
+  },
+  {
+    "id": 2,
+    "category": "Events",
+    "question": "Can I register for multiple college events?",
+    "answer": "Yes, registered students can sign up for any open event listed in the Events catalog, provided there are seats available and event timings do not clash."
+  },
+  {
+    "id": 3,
+    "category": "Account",
+    "question": "What should I do if I forget my password?",
+    "answer": "On the login page, you can request a password reset or contact the IT support administrator with your student roll number and registered email."
+  },
+  {
+    "id": 4,
+    "category": "Security",
+    "question": "How are student passwords protected?",
+    "answer": "StudentHub utilizes industry-standard cryptographic hashing via bcrypt (PHP password_hash) to ensure passwords are never stored in plaintext."
+  },
+  {
+    "id": 5,
+    "category": "Admin",
+    "question": "Who has administrative access to manage events?",
+    "answer": "Only authorized faculty coordinators and system administrators with the 'admin' role can create, update, or remove events and manage student records."
+  },
+  {
+    "id": 6,
+    "category": "Events",
+    "question": "How do I cancel my registration for an event?",
+    "answer": "Navigate to your Student Dashboard, view your 'Enrolled Events' section, and click the 'Cancel Registration' button before the event registration closes."
+  }
+]

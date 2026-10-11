@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "title": "Odd Semester 2026 Examination Schedule Released",
+    "category": "Academic",
+    "date": "2026-10-08",
+    "priority": "High",
+    "content": "The tentative schedule for 3rd semester university examinations is now available on the portal. Practical exams will commence from November 15."
+  },
+  {
+    "id": 2,
+    "title": "Campus Placement Drive: TCS & Infosys Registration",
+    "category": "Placement",
+    "date": "2026-10-05",
+    "priority": "High",
+    "content": "Eligible final and pre-final year students must submit their updated resume and CGPA proof to the T&P cell before October 20."
+  },
+  {
+    "id": 3,
+    "title": "National Level Web Hackathon Registration Open",
+    "category": "Events",
+    "date": "2026-10-02",
+    "priority": "Medium",
+    "content": "Registrations for the Web Hackathon 2026 are now open. Visit the events section to sign up your team of 3-4 members."
+  },
+  {
+    "id": 4,
+    "title": "Central Library Extended Reading Room Hours",
+    "category": "General",
+    "date": "2026-09-28",
+    "priority": "Low",
+    "content": "The central library reading hall will remain open until 11:00 PM on weekdays to assist students preparing for mid-term tests."
+  }
+]
