@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Register for StudentHub Portal - Real-time client-side validation and password strength evaluation.">
+  <title>Student Registration - StudentHub Portal</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="brand-logo" aria-label="StudentHub Home">
+        <span style="font-size: 1.8rem;">🎓</span>
+        <span>Student<span class="brand-badge">Hub</span></span>
+      </a>
+
+      <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle navigation" aria-expanded="false">
+        ☰
+      </button>
+
+      <nav id="main-nav" aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="admin.html">Admin</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle dark mode">🌙 Dark</button>
+        <a href="login.html" class="btn btn-outline btn-sm">Login</a>
+        <a href="register.html" class="btn btn-primary btn-sm active">Register</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs" aria-label="Breadcrumb">
+    <a href="index.html">Home</a> &gt; <span>Register</span>
+  </div>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <div class="form-card">
+      <div class="form-header">
+        <span class="badge badge-primary">Practical 5 & Practical 9</span>
+        <h2>Create Student Account</h2>
+        <p>Complete the registration form below. Real-time validation is active.</p>
+      </div>
+
+      <!-- Registration Form: submits via POST to PHP backend -->
+      <form id="registration-form" action="../php/register.php" method="POST" novalidate>
+        <!-- Full Name -->
+        <div class="form-group">
+          <label for="fullname" class="form-label">
+            <span>Full Name *</span>
+            <small style="color: var(--text-muted);">Alphabetical only</small>
+          </label>
+          <input type="text" id="fullname" name="fullname" class="form-control" placeholder="e.g. Rutvi Patel" required autocomplete="name">
+          <div id="name-error" class="error-message" role="alert"></div>
+        </div>
+
+        <!-- Email & Mobile Row -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email" class="form-label">Email Address *</label>
+            <input type="email" id="email" name="email" class="form-control" placeholder="student@charusat.edu" required autocomplete="email">
+            <div id="email-error" class="error-message" role="alert"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="phone" class="form-label">Mobile Number *</label>
+            <input type="tel" id="phone" name="phone" class="form-control" placeholder="10-digit number" maxlength="10" required autocomplete="tel">
+            <div id="phone-error" class="error-message" role="alert"></div>
+          </div>
+        </div>
+
+        <!-- Password & Strength Meter -->
+        <div class="form-group">
+          <label for="password" class="form-label">
+            <span>Password *</span>
+            <small style="color: var(--text-muted);">Min 8 chars (Uppercase, Number, Symbol)</small>
+          </label>
+          <input type="password" id="password" name="password" class="form-control" placeholder="Create strong password" required autocomplete="new-password">
+          <div class="password-meter">
+            <div class="meter-bar">
+              <div class="meter-fill" id="strength-fill"></div>
+            </div>
+            <div class="meter-text" id="strength-text">Strength: Not entered</div>
+          </div>
+          <div id="password-error" class="error-message" role="alert"></div>
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="form-group">
+          <label for="confirm_password" class="form-label">Confirm Password *</label>
+          <input type="password" id="confirm_password" name="confirm_password" class="form-control" placeholder="Re-enter password" required autocomplete="new-password">
+          <div id="confirm-password-error" class="error-message" role="alert"></div>
+        </div>
+
+        <!-- Department / Course & Year -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="course" class="form-label">Department / Course *</label>
+            <select id="course" name="course" class="form-control" required>
+              <option value="">Select Department</option>
+              <option value="B.Tech IT">B.Tech - Information Technology</option>
+              <option value="B.Tech CE">B.Tech - Computer Engineering</option>
+              <option value="B.Tech AIML">B.Tech - AI & Machine Learning</option>
+              <option value="B.Tech EC">B.Tech - Electronics & Comm.</option>
+              <option value="MCA">Master of Computer Applications</option>
+            </select>
+            <div id="course-error" class="error-message" role="alert"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="year" class="form-label">Academic Year *</label>
+            <select id="year" name="year" class="form-control" required>
+              <option value="1st Year">1st Year</option>
+              <option value="2nd Year">2nd Year</option>
+              <option value="3rd Year" selected>3rd Year</option>
+              <option value="4th Year">4th Year</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Gender Selection (Accessible Radio Group) -->
+        <div class="form-group">
+          <span class="form-label">Gender *</span>
+          <div style="display: flex; gap: 24px; margin-top: 6px;">
+            <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
+              <input type="radio" name="gender" value="Male" required> Male
+            </label>
+            <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
+              <input type="radio" name="gender" value="Female"> Female
+            </label>
+            <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
+              <input type="radio" name="gender" value="Other"> Other
+            </label>
+          </div>
+          <div id="gender-error" class="error-message" role="alert"></div>
+        </div>
+
+        <!-- Terms and Conditions Acceptance -->
+        <div class="form-group">
+          <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer; font-size: 0.9rem;">
+            <input type="checkbox" id="terms" name="terms" style="margin-top: 4px;" required>
+            <span>I accept the <a href="#" style="color: var(--primary);">Student Code of Conduct</a> and agree to adhere to campus IT policies.</span>
+          </label>
+          <div id="terms-error" class="error-message" role="alert"></div>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block" style="padding: 12px; font-size: 1.05rem;">
+          Register Account
+        </button>
+      </form>
+
+      <div style="text-align: center; margin-top: 24px; font-size: 0.9rem; color: var(--text-muted);">
+        Already have an account? <a href="login.html" style="color: var(--primary); font-weight: 600;">Sign in here</a>
+      </div>
+
+      <!-- Quick Mode Toggle for Practical 7 (CSV/JSON storage) vs Practical 9 (MySQL) -->
+      <div style="margin-top: 24px; padding-top: 18px; border-top: 1px dashed var(--border-color); text-align: center; font-size: 0.85rem; color: var(--text-muted);">
+        💡 <em>Testing Practical 7 (File Storage)? Form can also be submitted to:</em>
+        <div style="margin-top: 8px;">
+          <button type="button" class="btn btn-secondary btn-sm" onclick="document.getElementById('registration-form').action='../php/process_register.php'; alert('Action switched to Practical 7 CSV/JSON file processor!');">
+            Switch to Practical 7 (CSV/JSON File Storage)
+          </button>
+          <button type="button" class="btn btn-outline btn-sm" onclick="document.getElementById('registration-form').action='../php/register.php'; alert('Action switched to Practical 9 MySQL Database Insert!');">
+            Switch to Practical 9 (MySQL DB Storage)
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-bottom">
+      &copy; 2026-27 StudentHub Portal. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/validation.js"></script>
+</body>
+</html>

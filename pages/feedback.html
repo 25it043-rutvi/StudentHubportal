@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="StudentHub Portal Feedback - Share your experience and campus suggestions.">
+  <title>Portal Feedback - StudentHub Portal</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="brand-logo" aria-label="StudentHub Home">
+        <span style="font-size: 1.8rem;">🎓</span>
+        <span>Student<span class="brand-badge">Hub</span></span>
+      </a>
+
+      <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle navigation" aria-expanded="false">
+        ☰
+      </button>
+
+      <nav id="main-nav" aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="admin.html">Admin</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle dark mode">🌙 Dark</button>
+        <a href="login.html" class="btn btn-outline btn-sm">Login</a>
+        <a href="register.html" class="btn btn-primary btn-sm">Register</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs" aria-label="Breadcrumb">
+    <a href="index.html">Home</a> &gt; <span>Feedback</span>
+  </div>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <div class="form-card">
+      <div class="form-header">
+        <span class="badge badge-primary">Student Voice</span>
+        <h2>Student Feedback & Suggestions</h2>
+        <p>Help us improve StudentHub! Share your thoughts on portal usability, event offerings, and campus resources.</p>
+      </div>
+
+      <form onsubmit="event.preventDefault(); showNotification('Thank You!', 'Your feedback has been submitted to the academic committee.', 'success'); this.reset();">
+        <div class="form-group">
+          <label class="form-label" for="feed-name">Your Name (Optional)</label>
+          <input type="text" id="feed-name" class="form-control" placeholder="Rutvi Patel">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="feed-email">Email Address (Optional)</label>
+          <input type="email" id="feed-email" class="form-control" placeholder="student@charusat.edu">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="feed-category">Feedback Category *</label>
+          <select id="feed-category" class="form-control" required>
+            <option value="Portal Experience">Portal Experience & UI</option>
+            <option value="Event Organization">Event Quality & Logistics</option>
+            <option value="Academic Features">Academic & Exam Notices</option>
+            <option value="Feature Request">New Feature Suggestion</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Overall Portal Rating *</label>
+          <div style="display: flex; gap: 20px; font-size: 1.1rem; margin-top: 6px;">
+            <label style="cursor: pointer;"><input type="radio" name="rating" value="5" checked> ⭐⭐⭐⭐⭐ (5)</label>
+            <label style="cursor: pointer;"><input type="radio" name="rating" value="4"> ⭐⭐⭐⭐ (4)</label>
+            <label style="cursor: pointer;"><input type="radio" name="rating" value="3"> ⭐⭐⭐ (3)</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="feed-comments">Your Comments & Suggestions *</label>
+          <textarea id="feed-comments" class="form-control" rows="4" placeholder="Tell us what you liked or what needs improvement..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Submit Portal Feedback</button>
+      </form>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-bottom">
+      &copy; 2026-27 StudentHub Portal. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

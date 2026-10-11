@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About StudentHub - Academic Web Portal for CHARUSAT FTE.">
+  <title>About Us - StudentHub Portal</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="brand-logo" aria-label="StudentHub Home">
+        <span style="font-size: 1.8rem;">🎓</span>
+        <span>Student<span class="brand-badge">Hub</span></span>
+      </a>
+
+      <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle navigation" aria-expanded="false">
+        ☰
+      </button>
+
+      <nav id="main-nav" aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="admin.html">Admin</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle dark mode">🌙 Dark</button>
+        <a href="login.html" class="btn btn-outline btn-sm">Login</a>
+        <a href="register.html" class="btn btn-primary btn-sm">Register</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs" aria-label="Breadcrumb">
+    <a href="index.html">Home</a> &gt; <span>About Us</span>
+  </div>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <section class="section-title">
+      <h1>About StudentHub Portal</h1>
+      <p>Modern Full-Stack Academic Management Framework for CHARUSAT</p>
+    </section>
+
+    <!-- Project Overview -->
+    <article class="card" style="margin-bottom: 30px;">
+      <h3>🎯 Problem Definition & Project Vision</h3>
+      <p>
+        In modern educational institutions, academic announcements, extracurricular event registrations, departmental notices, and student profile management are frequently fragmented across disparate applications.
+      </p>
+      <p>
+        <strong>StudentHub</strong> addresses this challenge by providing a unified, secure, and responsive web portal built according to industry-standard web engineering principles. Students can track announcements, discover campus events, participate in hackathons, and monitor their profiles, while faculty administrators maintain full control over admissions, event lifecycles, and audit logging.
+      </p>
+    </article>
+
+    <!-- Architecture & Frameworks -->
+    <section class="cards-grid">
+      <article class="card">
+        <div class="card-icon">💻</div>
+        <h3>Frontend Architecture</h3>
+        <p>Built with Semantic HTML5, accessible ARIA roles, modern CSS Grid/Flexbox layouts, and client-side JavaScript for real-time validation and asynchronous Fetch API consumption.</p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">⚙️</div>
+        <h3>Backend Architecture</h3>
+        <p>Engineered using PHP 8 with session fixation prevention, role-based access control (RBAC), automatic session timeouts, and secure RESTful JSON API endpoints.</p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🗄️</div>
+        <h3>Database & Security</h3>
+        <p>Relational MySQL schema with strict foreign keys, prepared statements via PDO/MySQLi to prevent SQL injection, and bcrypt password hashing (password_hash).</p>
+      </article>
+    </section>
+
+    <!-- User Roles Section -->
+    <section class="card" style="margin-bottom: 30px;">
+      <h3>👥 User Roles & Responsibilities</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 16px;">
+        <div style="background: var(--bg-subtle); padding: 20px; border-radius: var(--radius-sm);">
+          <h4 style="color: var(--primary); margin-bottom: 8px;">🎓 Student Role</h4>
+          <ul style="padding-left: 20px; color: var(--text-muted); font-size: 0.95rem;">
+            <li>Register and log in securely.</li>
+            <li>Explore and filter upcoming campus events.</li>
+            <li>Register for events and view registered status.</li>
+            <li>Access profile details and departmental notices.</li>
+            <li>Submit feedback and search FAQ answers.</li>
+          </ul>
+        </div>
+        <div style="background: var(--bg-subtle); padding: 20px; border-radius: var(--radius-sm);">
+          <h4 style="color: var(--warning); margin-bottom: 8px;">🛡️ Administrator Role</h4>
+          <ul style="padding-left: 20px; color: var(--text-muted); font-size: 0.95rem;">
+            <li>Comprehensive admin dashboard with live statistical cards.</li>
+            <li>Full CRUD operations on student accounts (with soft delete).</li>
+            <li>Full CRUD operations on events with poster image uploads.</li>
+            <li>Monitor user registrations and view audit log trails.</li>
+            <li>Toggle student activation statuses.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>🎓 StudentHub Portal</h4>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">
+          Charotar University of Science and Technology (CHARUSAT)<br>
+          Faculty of Technology and Engineering (FTE)
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="events.html">Campus Events</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026-27 StudentHub Portal. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="StudentHub - Student Portal Dashboard">
+  <title>Student Dashboard - StudentHub Portal</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="brand-logo" aria-label="StudentHub Home">
+        <span style="font-size: 1.8rem;">🎓</span>
+        <span>Student<span class="brand-badge">Hub</span></span>
+      </a>
+
+      <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle navigation" aria-expanded="false">
+        ☰
+      </button>
+
+      <nav id="main-nav" aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="dashboard.html" class="active">Dashboard</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle dark mode">🌙 Dark</button>
+        <span style="font-size: 0.9rem; font-weight: 600; color: var(--primary);">👤 Rutvi Patel</span>
+        <a href="login.html" class="btn btn-outline btn-sm">Logout</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs" aria-label="Breadcrumb">
+    <a href="index.html">Home</a> &gt; <span>Student Dashboard</span>
+  </div>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Welcome Banner -->
+    <div style="background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: white; padding: 28px 32px; border-radius: var(--radius-lg); margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+      <div>
+        <span style="background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">STUDENT ROLE</span>
+        <h1 style="font-size: 2.1rem; margin-top: 6px; color: white;">Welcome back, Rutvi!</h1>
+        <p style="opacity: 0.9; font-size: 1.05rem;">B.Tech Information Technology &bull; 3rd Year (Semester 5) &bull; ID: 26IT042</p>
+      </div>
+      <div>
+        <a href="events.html" class="btn btn-secondary" style="background: white; color: var(--primary); font-weight: 700;">Browse All Events &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Metrics Stats Grid (Practical 14 preview / Student metrics) -->
+    <section class="stats-grid" aria-label="Student Statistics">
+      <div class="stat-card">
+        <div class="stat-info">
+          <h4>Enrolled Events</h4>
+          <div class="stat-number">3</div>
+        </div>
+        <div class="stat-icon">🎟️</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-info">
+          <h4>Attendance</h4>
+          <div class="stat-number">94.2%</div>
+        </div>
+        <div class="stat-icon">📊</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-info">
+          <h4>Current CGPA</h4>
+          <div class="stat-number">8.85</div>
+        </div>
+        <div class="stat-icon">⭐</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-info">
+          <h4>Active Notices</h4>
+          <div class="stat-number">4</div>
+        </div>
+        <div class="stat-icon">🔔</div>
+      </div>
+    </section>
+
+    <!-- Two-column Dashboard Layout -->
+    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 24px;">
+      <!-- Left Column: My Enrolled Events -->
+      <section>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+          <h2>My Enrolled Events</h2>
+          <a href="events.html" class="btn btn-outline btn-sm">Find More</a>
+        </div>
+
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Event Title</th>
+                <th>Category</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>National Level Web Hackathon 2026</strong></td>
+                <td><span class="badge badge-primary">Technical</span></td>
+                <td>2026-10-25</td>
+                <td><span class="badge badge-success">Confirmed</span></td>
+                <td><button class="btn btn-outline btn-sm" onclick="alert('Ticket: #WH-8821\nSeat confirmed for Rutvi Patel');">View Pass</button></td>
+              </tr>
+              <tr>
+                <td><strong>Cloud Computing & DevOps Workshop</strong></td>
+                <td><span class="badge badge-warning">Workshop</span></td>
+                <td>2026-11-05</td>
+                <td><span class="badge badge-success">Confirmed</span></td>
+                <td><button class="btn btn-outline btn-sm" onclick="alert('Ticket: #CW-1049\nSeminar Hall B');">View Pass</button></td>
+              </tr>
+              <tr>
+                <td><strong>Spandan 2026 Cultural Fest</strong></td>
+                <td><span class="badge badge-primary">Cultural</span></td>
+                <td>2026-11-18</td>
+                <td><span class="badge badge-warning">Pending</span></td>
+                <td><button class="btn btn-outline btn-sm" onclick="alert('Audition details pending announcement');">Check Status</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Right Column: Recent Notices -->
+      <aside>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+          <h2>Recent Notices</h2>
+          <span class="badge badge-primary">Odd Sem 26</span>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div class="card" style="padding: 16px;">
+            <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 6px;">
+              <span class="badge badge-danger">High Priority</span>
+              <span>Oct 8, 2026</span>
+            </div>
+            <h4 style="font-size: 1rem; margin-bottom: 6px;">Odd Semester Examination Schedule</h4>
+            <p style="font-size: 0.85rem; margin-bottom: 0;">Practical exams will commence from November 15. Check timetable on portal.</p>
+          </div>
+
+          <div class="card" style="padding: 16px;">
+            <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 6px;">
+              <span class="badge badge-primary">Placement</span>
+              <span>Oct 5, 2026</span>
+            </div>
+            <h4 style="font-size: 1rem; margin-bottom: 6px;">TCS Campus Drive Registration</h4>
+            <p style="font-size: 0.85rem; margin-bottom: 0;">Submit updated resume and CGPA proof to T&P cell before October 20.</p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-bottom">
+      &copy; 2026-27 StudentHub Portal. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

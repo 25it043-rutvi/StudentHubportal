@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Frequently Asked Questions - Practical 4 Interactive Collapsible Accordion.">
+  <title>Frequently Asked Questions - StudentHub Portal</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="brand-logo" aria-label="StudentHub Home">
+        <span style="font-size: 1.8rem;">🎓</span>
+        <span>Student<span class="brand-badge">Hub</span></span>
+      </a>
+
+      <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle navigation" aria-expanded="false">
+        ☰
+      </button>
+
+      <nav id="main-nav" aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="faq.html" class="active">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="admin.html">Admin</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle dark mode">🌙 Dark</button>
+        <a href="login.html" class="btn btn-outline btn-sm">Login</a>
+        <a href="register.html" class="btn btn-primary btn-sm">Register</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs" aria-label="Breadcrumb">
+    <a href="index.html">Home</a> &gt; <span>Frequently Asked Questions</span>
+  </div>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <section class="section-title">
+      <span class="badge badge-primary">Practical 4: Interactive Accordion</span>
+      <h1>Frequently Asked Questions</h1>
+      <p>Click on any question to expand and read the details. Enhanced with accessible keyboard and ARIA navigation.</p>
+    </section>
+
+    <!-- Collapsible Accordion (Practical 4) -->
+    <div class="accordion" id="faq-accordion" style="max-width: 800px; margin: 0 auto;">
+      <!-- Item 1 -->
+      <div class="accordion-item active">
+        <button class="accordion-header" aria-expanded="true">
+          <span>How do I create a StudentHub account?</span>
+          <span class="accordion-icon">&#9660;</span>
+        </button>
+        <div class="accordion-collapse">
+          <div class="accordion-body">
+            Click on the 'Register' link in the top navigation bar. Fill in your full name, student email, mobile number, course, year, and a secure password. Once submitted, your profile will be created instantly in MySQL or CSV storage.
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>Can I register for multiple college events?</span>
+          <span class="accordion-icon">&#9660;</span>
+        </button>
+        <div class="accordion-collapse">
+          <div class="accordion-body">
+            Yes, registered students can sign up for any open event listed in the Events catalog, provided there are seats available and event timings do not clash.
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>How are student passwords protected?</span>
+          <span class="accordion-icon">&#9660;</span>
+        </button>
+        <div class="accordion-collapse">
+          <div class="accordion-body">
+            StudentHub utilizes industry-standard cryptographic hashing via bcrypt (PHP <code>password_hash()</code>) to ensure passwords are never stored in plaintext. We also implement duplicate email checks and session fixation countermeasures.
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>What is the session inactivity timeout period?</span>
+          <span class="accordion-icon">&#9660;</span>
+        </button>
+        <div class="accordion-collapse">
+          <div class="accordion-body">
+            For academic portal security (Practical 10), user sessions automatically expire after 15 minutes of inactivity. When you return, simply log in again with your credentials.
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 5 -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>Who has administrative access to manage events?</span>
+          <span class="accordion-icon">&#9660;</span>
+        </button>
+        <div class="accordion-collapse">
+          <div class="accordion-body">
+            Only authorized faculty coordinators and system administrators with the 'admin' role can create, update, or remove events, upload posters, view audit logs, and manage student accounts.
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 6 -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>How does the AJAX/Fetch CRUD mode work?</span>
+          <span class="accordion-icon">&#9660;</span>
+        </button>
+        <div class="accordion-collapse">
+          <div class="accordion-body">
+            In Practical 13, all additions, modifications, and deletions communicate with a PHP JSON REST API endpoint in the background using JavaScript <code>fetch()</code>, updating the UI dynamically without any full page reload.
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-bottom">
+      &copy; 2026-27 StudentHub Portal. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

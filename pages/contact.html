@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact StudentHub Support - Helpdesk, campus inquiries, and technical assistance.">
+  <title>Contact Us - StudentHub Portal</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="brand-logo" aria-label="StudentHub Home">
+        <span style="font-size: 1.8rem;">🎓</span>
+        <span>Student<span class="brand-badge">Hub</span></span>
+      </a>
+
+      <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle navigation" aria-expanded="false">
+        ☰
+      </button>
+
+      <nav id="main-nav" aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="admin.html">Admin</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle dark mode">🌙 Dark</button>
+        <a href="login.html" class="btn btn-outline btn-sm">Login</a>
+        <a href="register.html" class="btn btn-primary btn-sm">Register</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs" aria-label="Breadcrumb">
+    <a href="index.html">Home</a> &gt; <span>Contact Us</span>
+  </div>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <section class="section-title">
+      <h1>Contact Campus Support</h1>
+      <p>Have questions about admissions, event registrations, or portal technicalities? Get in touch.</p>
+    </section>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+      <!-- Contact Info Aside -->
+      <aside class="card">
+        <h3>📍 Campus Helpdesk Office</h3>
+        <p>Faculty of Technology and Engineering (FTE)<br>Charotar University of Science and Technology (CHARUSAT)</p>
+
+        <div style="margin: 20px 0; display: flex; flex-direction: column; gap: 14px;">
+          <div>
+            <strong>📍 Address:</strong><br>
+            <span style="color: var(--text-muted);">CHARUSAT Campus, Changa, Dist. Anand, Gujarat - 388421, India</span>
+          </div>
+          <div>
+            <strong>📧 Email:</strong><br>
+            <span style="color: var(--text-muted);">studenthub.fte@charusat.edu.in</span>
+          </div>
+          <div>
+            <strong>📞 Phone / Helpline:</strong><br>
+            <span style="color: var(--text-muted);">+91 2697 265011 / 265021 (Ext. 204)</span>
+          </div>
+          <div>
+            <strong>🕒 Operating Hours:</strong><br>
+            <span style="color: var(--text-muted);">Monday - Saturday: 09:00 AM - 04:30 PM</span>
+          </div>
+        </div>
+
+        <div style="background: var(--bg-subtle); padding: 16px; border-radius: var(--radius-sm);">
+          <strong>💡 Fast Resolution Tip:</strong>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 4px;">For immediate answers to event registration questions and login troubleshooting, browse our <a href="faq.html" style="color: var(--primary);">Frequently Asked Questions (FAQ)</a>.</p>
+        </div>
+      </aside>
+
+      <!-- Contact Form: submits to Practical 7 PHP file storage handler -->
+      <section class="card">
+        <h3>Send an Inquiry (Practical 7)</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">
+          Processed securely via PHP and saved in CSV/JSON format.
+        </p>
+
+        <form action="../php/process_contact.php" method="POST">
+          <div class="form-group">
+            <label class="form-label" for="contact-name">Your Full Name *</label>
+            <input type="text" id="contact-name" name="name" class="form-control" placeholder="Enter name" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="contact-email">Email Address *</label>
+            <input type="email" id="contact-email" name="email" class="form-control" placeholder="Enter email" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="contact-subject">Inquiry Subject *</label>
+            <select id="contact-subject" name="subject" class="form-control" required>
+              <option value="Event Registration">Event Registration Assistance</option>
+              <option value="Account Login Issue">Account / Login Issue</option>
+              <option value="Academic Notice Query">Academic Notice Query</option>
+              <option value="General Campus Question">General Campus Question</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="contact-message">Message *</label>
+            <textarea id="contact-message" name="message" class="form-control" rows="4" placeholder="How can we help you?" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">Submit Inquiry</button>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-bottom">
+      &copy; 2026-27 StudentHub Portal. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

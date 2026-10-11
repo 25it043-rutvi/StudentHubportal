@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Campus Events - Practical 6 Fetch API Dynamic Catalog with Search, Filter & Pagination.">
+  <title>Campus Events - StudentHub Portal</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="brand-logo" aria-label="StudentHub Home">
+        <span style="font-size: 1.8rem;">🎓</span>
+        <span>Student<span class="brand-badge">Hub</span></span>
+      </a>
+
+      <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle navigation" aria-expanded="false">
+        ☰
+      </button>
+
+      <nav id="main-nav" aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="events.html" class="active">Events</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="admin.html">Admin</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle dark mode">🌙 Dark</button>
+        <a href="ajax-events.html" class="btn btn-outline btn-sm">AJAX CRUD Mode &rarr;</a>
+        <a href="login.html" class="btn btn-primary btn-sm">Sign In</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs" aria-label="Breadcrumb">
+    <a href="index.html">Home</a> &gt; <span>Campus Events</span>
+  </div>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <section class="section-title">
+      <span class="badge badge-primary">Practical 6: Fetch API</span>
+      <h1>College Events & Workshops</h1>
+      <p>Loaded asynchronously from external JSON with live search, category filtering, and pagination.</p>
+    </section>
+
+    <!-- Search & Filter Controls (Practical 6) -->
+    <div class="filter-bar" aria-label="Event Filter and Search Controls">
+      <div class="filter-group">
+        <input type="text" id="event-search" class="search-input" placeholder="🔍 Search events by title, venue..." aria-label="Search events">
+        
+        <select id="event-category" class="search-input" style="min-width: 170px;" aria-label="Filter by category">
+          <option value="All">All Categories</option>
+          <option value="Technical">Technical</option>
+          <option value="Workshop">Workshop</option>
+          <option value="Cultural">Cultural</option>
+          <option value="Sports">Sports</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="event-sort" style="font-size: 0.9rem; font-weight: 600; color: var(--text-muted);">Sort By:</label>
+        <select id="event-sort" class="search-input" style="min-width: 170px;" aria-label="Sort events">
+          <option value="date-asc">Date (Earliest First)</option>
+          <option value="date-desc">Date (Latest First)</option>
+          <option value="title-asc">Title (A - Z)</option>
+          <option value="seats-desc">Most Seats Available</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Dynamic Events Grid -->
+    <div id="events-container" class="cards-grid" aria-live="polite">
+      <!-- Injected via js/fetch-data.js -->
+    </div>
+
+    <!-- Pagination Controls -->
+    <div id="events-pagination" class="pagination" aria-label="Events pagination">
+      <!-- Injected via js/fetch-data.js -->
+    </div>
+  </main>
+
+  <!-- Global Modal Popup Container for Event Details (Practical 4) -->
+  <div class="modal-overlay" id="custom-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="modal-title">Event Information</h3>
+        <button class="modal-close-btn" data-close-modal aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body" id="modal-body">
+        Loading event details...
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-close-modal>Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-bottom">
+      &copy; 2026-27 StudentHub Portal. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/fetch-data.js"></script>
+</body>
+</html>

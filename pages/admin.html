@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Admin Dashboard - Practical 14 RBAC, Statistics, and Audit Logs.">
+  <title>Admin Dashboard - StudentHub Portal</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="brand-logo" aria-label="StudentHub Home">
+        <span style="font-size: 1.8rem;">🎓</span>
+        <span>Student<span class="brand-badge">Hub</span> <span style="font-size: 0.75rem; background: var(--warning); color: #000; padding: 2px 8px; border-radius: 10px; font-weight: 700; vertical-align: middle;">ADMIN</span></span>
+      </a>
+
+      <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle navigation" aria-expanded="false">
+        ☰
+      </button>
+
+      <nav id="main-nav" aria-label="Admin Navigation">
+        <ul class="nav-links">
+          <li><a href="admin.html" class="active">Overview</a></li>
+          <li><a href="../php/students.php">Manage Students</a></li>
+          <li><a href="../php/events.php">Manage Events</a></li>
+          <li><a href="ajax-events.html">AJAX CRUD</a></li>
+          <li><a href="../php/view_records.php">Submissions</a></li>
+          <li><a href="index.html">Public Site</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle dark mode">🌙 Dark</button>
+        <span style="font-size: 0.85rem; font-weight: 600; color: var(--warning);">🛡️ Admin User</span>
+        <a href="login.html" class="btn btn-outline btn-sm">Logout</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs" aria-label="Breadcrumb">
+    <a href="index.html">Home</a> &gt; <span>Administrator Dashboard</span>
+  </div>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 14px;">
+      <div>
+        <span class="badge badge-warning">Practical 14: Role-Based Access Control</span>
+        <h1 style="margin-top: 4px;">System Overview & Analytics</h1>
+      </div>
+      <div>
+        <a href="../php/admin_dashboard.php" class="btn btn-primary btn-sm">Launch Live PHP Admin Backend &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Live Statistics Cards Grid (Practical 14) -->
+    <section class="stats-grid" aria-label="Administrator Statistics">
+      <div class="stat-card">
+        <div class="stat-info">
+          <h4>Total Registered Students</h4>
+          <div class="stat-number">128</div>
+        </div>
+        <div class="stat-icon" style="background: var(--primary-light); color: var(--primary);">👨‍🎓</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-info">
+          <h4>Active Campus Events</h4>
+          <div class="stat-number">12</div>
+        </div>
+        <div class="stat-icon" style="background: var(--success-bg); color: var(--success);">🎪</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-info">
+          <h4>Total Registrations</h4>
+          <div class="stat-number">485</div>
+        </div>
+        <div class="stat-icon" style="background: var(--warning-bg); color: var(--warning);">🎟️</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-info">
+          <h4>Audit Log Entries</h4>
+          <div class="stat-number">64</div>
+        </div>
+        <div class="stat-icon" style="background: var(--info-bg); color: var(--info);">📋</div>
+      </div>
+    </section>
+
+    <!-- Quick Admin Actions Bar -->
+    <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 18px 24px; margin-bottom: 30px; display: flex; gap: 14px; flex-wrap: wrap; align-items: center;">
+      <span style="font-weight: 700; font-size: 0.95rem;">⚡ Quick Actions:</span>
+      <a href="../php/student_add.php" class="btn btn-primary btn-sm">+ Add Student Record</a>
+      <a href="../php/event_add.php" class="btn btn-outline btn-sm">+ Create New Event with Poster</a>
+      <a href="ajax-events.html" class="btn btn-secondary btn-sm">Test AJAX Event CRUD</a>
+      <a href="../php/view_records.php" class="btn btn-outline btn-sm">Export Submissions CSV</a>
+    </div>
+
+    <!-- Manage Students Table with Search & Status Toggle (Practical 11 & 14) -->
+    <section class="card" style="margin-bottom: 30px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
+        <div>
+          <h3>Recent Student Accounts</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">Practical 11 Student CRUD & Practical 14 Active/Inactive Status Toggle</p>
+        </div>
+        <a href="../php/students.php" class="btn btn-outline btn-sm">Full Student Manager &rarr;</a>
+      </div>
+
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Student Name</th>
+              <th>Email</th>
+              <th>Department</th>
+              <th>Year</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#101</td>
+              <td><strong>Rutvi Patel</strong></td>
+              <td>rutvi.patel@studenthub.edu</td>
+              <td>B.Tech IT</td>
+              <td>3rd Year</td>
+              <td><span class="badge badge-success" id="status-badge-101">Active</span></td>
+              <td>
+                <button class="btn btn-secondary btn-sm" onclick="toggleUserStatus('status-badge-101')">Toggle Status</button>
+                <a href="../php/student_edit.php?id=101" class="btn btn-outline btn-sm">Edit</a>
+              </td>
+            </tr>
+            <tr>
+              <td>#102</td>
+              <td><strong>Aarav Shah</strong></td>
+              <td>aarav.shah@studenthub.edu</td>
+              <td>B.Tech CE</td>
+              <td>2nd Year</td>
+              <td><span class="badge badge-success" id="status-badge-102">Active</span></td>
+              <td>
+                <button class="btn btn-secondary btn-sm" onclick="toggleUserStatus('status-badge-102')">Toggle Status</button>
+                <a href="../php/student_edit.php?id=102" class="btn btn-outline btn-sm">Edit</a>
+              </td>
+            </tr>
+            <tr>
+              <td>#103</td>
+              <td><strong>Diya Mehta</strong></td>
+              <td>diya.mehta@studenthub.edu</td>
+              <td>B.Tech AIML</td>
+              <td>3rd Year</td>
+              <td><span class="badge badge-danger" id="status-badge-103">Inactive</span></td>
+              <td>
+                <button class="btn btn-secondary btn-sm" onclick="toggleUserStatus('status-badge-103')">Toggle Status</button>
+                <a href="../php/student_edit.php?id=103" class="btn btn-outline btn-sm">Edit</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Audit Log Table (Practical 14) -->
+    <section class="card">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+        <div>
+          <h3>System Audit Trail (Practical 14)</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">Traceability of critical authentication and administrative events.</p>
+        </div>
+        <span class="badge badge-primary">Encrypted Log</span>
+      </div>
+
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>Timestamp</th>
+              <th>Action</th>
+              <th>User Context</th>
+              <th>Details</th>
+              <th>IP Address</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2026-10-10 11:15:22</td>
+              <td><span class="badge badge-success">LOGIN_SUCCESS</span></td>
+              <td>admin@studenthub.com</td>
+              <td>Administrator session authenticated with session regeneration</td>
+              <td>127.0.0.1</td>
+            </tr>
+            <tr>
+              <td>2026-10-10 10:45:10</td>
+              <td><span class="badge badge-primary">EVENT_CREATED</span></td>
+              <td>admin@studenthub.com</td>
+              <td>Added "AI & LLM Bootcamp" with verified poster upload</td>
+              <td>127.0.0.1</td>
+            </tr>
+            <tr>
+              <td>2026-10-10 09:30:00</td>
+              <td><span class="badge badge-info">USER_REGISTERED</span></td>
+              <td>rutvi.patel@studenthub.edu</td>
+              <td>New student account registered with bcrypt hash verification</td>
+              <td>192.168.1.15</td>
+            </tr>
+            <tr>
+              <td>2026-10-10 09:12:44</td>
+              <td><span class="badge badge-warning">STATUS_TOGGLED</span></td>
+              <td>admin@studenthub.com</td>
+              <td>Updated user #103 status to Inactive</td>
+              <td>127.0.0.1</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-bottom">
+      &copy; 2026-27 StudentHub Portal. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    function toggleUserStatus(badgeId) {
+      const badge = document.getElementById(badgeId);
+      if (!badge) return;
+      if (badge.textContent === 'Active') {
+        badge.textContent = 'Inactive';
+        badge.className = 'badge badge-danger';
+        showNotification('Status Updated', 'User status changed to Inactive.', 'warning');
+      } else {
+        badge.textContent = 'Active';
+        badge.className = 'badge badge-success';
+        showNotification('Status Updated', 'User status changed to Active.', 'success');
+      }
+    }
+  </script>
+</body>
+</html>

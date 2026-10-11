@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Student Profile - StudentHub Portal">
+  <title>Student Profile - StudentHub Portal</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="brand-logo" aria-label="StudentHub Home">
+        <span style="font-size: 1.8rem;">🎓</span>
+        <span>Student<span class="brand-badge">Hub</span></span>
+      </a>
+
+      <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle navigation" aria-expanded="false">
+        ☰
+      </button>
+
+      <nav id="main-nav" aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="profile.html" class="active">Profile</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle dark mode">🌙 Dark</button>
+        <a href="login.html" class="btn btn-outline btn-sm">Logout</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs" aria-label="Breadcrumb">
+    <a href="index.html">Home</a> &gt; <a href="dashboard.html">Dashboard</a> &gt; <span>Profile</span>
+  </div>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <div style="display: grid; grid-template-columns: 300px 1fr; gap: 30px;">
+      <!-- Profile Card Aside -->
+      <aside class="card" style="text-align: center; height: fit-content;">
+        <div style="width: 110px; height: 110px; border-radius: 50%; background: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 3rem; margin: 0 auto 16px; border: 3px solid var(--primary);">
+          👩‍🎓
+        </div>
+        <h2 style="font-size: 1.35rem; margin-bottom: 4px;">Rutvi Patel</h2>
+        <span class="badge badge-success" style="margin-bottom: 12px;">Active Student</span>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 16px;">
+          Student ID: 26IT042<br>
+          Department of IT (FTE)
+        </p>
+
+        <div style="border-top: 1px solid var(--border-color); padding-top: 16px; text-align: left; font-size: 0.88rem;">
+          <p style="margin-bottom: 8px;"><strong>📧 Email:</strong> rutvi.patel@studenthub.edu</p>
+          <p style="margin-bottom: 8px;"><strong>📱 Phone:</strong> +91 98765 43210</p>
+          <p style="margin-bottom: 8px;"><strong>📅 Enrolled:</strong> August 2024</p>
+          <p style="margin-bottom: 0;"><strong>⭐ CGPA:</strong> 8.85 / 10</p>
+        </div>
+      </aside>
+
+      <!-- Edit Profile Form -->
+      <section class="card">
+        <h2 style="margin-bottom: 6px;">Manage Personal Information</h2>
+        <p style="color: var(--text-muted); margin-bottom: 24px;">Update your contact information and preferences.</p>
+
+        <form onsubmit="event.preventDefault(); showNotification('Profile Updated', 'Your profile details have been saved successfully.', 'success');">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="prof-name">Full Name</label>
+              <input type="text" id="prof-name" class="form-control" value="Rutvi Patel" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="prof-id">Student ID / Roll No</label>
+              <input type="text" id="prof-id" class="form-control" value="26IT042" readonly style="background: var(--bg-subtle);">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="prof-email">Email Address</label>
+              <input type="email" id="prof-email" class="form-control" value="rutvi.patel@studenthub.edu" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="prof-phone">Mobile Number</label>
+              <input type="tel" id="prof-phone" class="form-control" value="9876543210" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="prof-dept">Department</label>
+              <select id="prof-dept" class="form-control">
+                <option selected>Information Technology (IT)</option>
+                <option>Computer Engineering (CE)</option>
+                <option>AI & Machine Learning (AIML)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="prof-year">Current Year</label>
+              <select id="prof-year" class="form-control">
+                <option>1st Year</option>
+                <option>2nd Year</option>
+                <option selected>3rd Year</option>
+                <option>4th Year</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="prof-bio">Bio / Interests</label>
+            <textarea id="prof-bio" class="form-control" rows="3">Enthusiastic full-stack web developer passionate about cloud engineering, reactive architectures, and competitive coding.</textarea>
+          </div>
+
+          <div style="display: flex; gap: 12px; margin-top: 10px;">
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+            <button type="reset" class="btn btn-secondary">Reset</button>
+          </div>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-bottom">
+      &copy; 2026-27 StudentHub Portal. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

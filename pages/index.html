@@ -1,59 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StudentHub -Home</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="StudentHub - A centralized portal for student academic info, events, notices, and services.">
+  <title>StudentHub - Centralized Campus Portal</title>
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <header>
-        <h1>
-            StudentHub
-        </h1>
-        <p>Your Digital Campus Portal</p>
-    </header>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html"> About</a>
-       
-        <a href="register.html">Register</a>
-        <a href="login.html">Login</a>
-        <a href="dashbord.html">Dashbord</a>
-        <a href="events.html">Events</a>
-        
-       <a href="profile.html">Profile</a>
-        <a href="admin.html">Admin</a>
-       
-        <a href="contact.html">Contact</a>
-         <a href="faq.html">FAQ</a>
-        <a href="feedback.html">Feedback</a>
-        
-    </nav>
-    <main>
-        <section>
-            <h2>Welecome to StudentHub</h2>
-            <p>
-                StudentHub is a digital platform where students can register,
-                participate in events,manage profiles and access academic information.
-            </p>
-        </section>
-        <article>
-            <h3>upcoming workshop</h3>
-            <p>
-                A web Development Workshop will be conducted next week.
-            </p>
+  <!-- Accessibility Skip Link (Practical 2, 3) -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header & Navigation -->
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="brand-logo" aria-label="StudentHub Home">
+        <span style="font-size: 1.8rem;">🎓</span>
+        <span>Student<span class="brand-badge">Hub</span></span>
+      </a>
+
+      <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle navigation" aria-expanded="false">
+        ☰
+      </button>
+
+      <nav id="main-nav" aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="admin.html">Admin</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle dark mode">🌙 Dark</button>
+        <a href="login.html" class="btn btn-outline btn-sm">Login</a>
+        <a href="register.html" class="btn btn-primary btn-sm">Register</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs" aria-label="Breadcrumb">
+    <span>Home</span>
+  </div>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero-section" aria-labelledby="hero-title">
+      <div class="hero-content">
+        <span class="hero-tag">Empowering Campus Life</span>
+        <h1 id="hero-title">Welcome to StudentHub Portal</h1>
+        <p>Your centralized gateway to college events, academic resources, club activities, examination schedules, and student management services.</p>
+        <div class="hero-cta">
+          <a href="register.html" class="btn btn-primary">Get Started Now</a>
+          <a href="events.html" class="btn btn-outline">Explore Events</a>
+          <a href="../php/dashboard.php" class="btn btn-secondary">PHP Full-Stack Mode &rarr;</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div style="font-size: 7rem; line-height: 1; filter: drop-shadow(0 10px 15px rgba(37,99,235,0.2));">🏛️</div>
+      </div>
+    </section>
+
+    <!-- Carousel / Slider (Practical 4) -->
+    <section class="slider-container" aria-label="Featured Campus Highlights">
+      <button class="slider-btn slider-prev" id="slider-prev" aria-label="Previous Slide">&larr;</button>
+      <div class="slider-track" id="slider-track">
+        <div class="slide">
+          <div class="slide-content">
+            <span class="badge badge-primary">Upcoming Hackathon</span>
+            <h3>National Web Hackathon 2026</h3>
+            <p>24 hours of innovation, collaboration, and prototyping. Win cash prizes worth ₹50,000!</p>
+            <a href="events.html" class="btn btn-primary btn-sm">Register Team</a>
+          </div>
+          <div style="font-size: 4rem;">💻</div>
+        </div>
+        <div class="slide">
+          <div class="slide-content">
+            <span class="badge badge-warning">Cultural Showcase</span>
+            <h3>Spandan 2026 Annual Cultural Fest</h3>
+            <p>Join dance, music, theater, and art competitions across departments this November.</p>
+            <a href="events.html" class="btn btn-primary btn-sm">View Schedule</a>
+          </div>
+          <div style="font-size: 4rem;">🎭</div>
+        </div>
+        <div class="slide">
+          <div class="slide-content">
+            <span class="badge badge-success">Academic Notice</span>
+            <h3>Odd Semester Examination Schedule</h3>
+            <p>Practical and end-semester timetables are published. Check your dates today.</p>
+            <a href="dashboard.html" class="btn btn-primary btn-sm">Check Dates</a>
+          </div>
+          <div style="font-size: 4rem;">📝</div>
+        </div>
+      </div>
+      <button class="slider-btn slider-next" id="slider-next" aria-label="Next Slide">&rarr;</button>
+      <div class="slider-dots" id="slider-dots"></div>
+    </section>
+
+    <!-- Core Services Cards Grid (Practical 2, 3) -->
+    <section aria-labelledby="services-title">
+      <div class="section-title">
+        <h2 id="services-title">Explore Portal Services</h2>
+        <p>Everything you need for seamless campus administration and engagement.</p>
+      </div>
+
+      <div class="cards-grid">
+        <article class="card">
+          <div class="card-icon">📚</div>
+          <h3>Academic Resources</h3>
+          <p>Access syllabus outlines, past papers, lecture notes, and lab guidelines in one organized repository.</p>
+          <a href="dashboard.html" class="btn btn-outline btn-sm">Access Resources</a>
         </article>
-        <aside>
-            <h3>Latest Notice</h3>
-            <ul>
-                <li>Lab submission on Friday</li>
-                <li>Workshop Registration Open</li>
-                <li>Hackthon Next Month</li>
-            </ul>
-        </aside>
-    </main>
-    <footer>
-        <p>&copy;2026 studentHub. All Rigths Reserved</p>
-    </footer>
+
+        <article class="card">
+          <div class="card-icon">🎪</div>
+          <h3>Campus Events</h3>
+          <p>Browse technical hackathons, cultural festivals, sports tourneys, and guest lectures with instant registration.</p>
+          <a href="events.html" class="btn btn-outline btn-sm">Browse Events</a>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">📢</div>
+          <h3>Notices & Circulars</h3>
+          <p>Stay informed about exam timetables, fee deadlines, placement drives, and official announcements.</p>
+          <a href="dashboard.html" class="btn btn-outline btn-sm">View Notices</a>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">⚡</div>
+          <h3>AJAX Event Manager</h3>
+          <p>Manage and test asynchronous event CRUD without full page reload using modern Fetch API and PHP JSON API.</p>
+          <a href="ajax-events.html" class="btn btn-primary btn-sm">Try AJAX CRUD</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Modal Popup Container (Practical 4) -->
+  <div class="modal-overlay" id="custom-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="modal-title">Modal Title</h3>
+        <button class="modal-close-btn" data-close-modal aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body" id="modal-body">
+        Modal content goes here.
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-close-modal>Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>🎓 StudentHub Portal</h4>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">
+          Charotar University of Science and Technology (CHARUSAT)<br>
+          Faculty of Technology and Engineering (FTE)<br>
+          ITUE203: Web Development Frameworks
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="events.html">Campus Events</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+          <li><a href="feedback.html">Submit Feedback</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>User Portals</h4>
+        <ul>
+          <li><a href="register.html">Student Registration</a></li>
+          <li><a href="login.html">Portal Login</a></li>
+          <li><a href="dashboard.html">Student Dashboard</a></li>
+          <li><a href="admin.html">Admin Dashboard</a></li>
+          <li><a href="../php/view_records.php">View Form Records (PHP)</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Helpdesk</h4>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">
+          📍 Changa, Anand, Gujarat, India<br>
+          📧 support@studenthub.edu<br>
+          📞 +91 2697 265011
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026-27 StudentHub Portal. All rights reserved. Academic Project Submission.
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
 </body>
 </html>
