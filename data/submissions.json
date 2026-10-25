@@ -1,0 +1,46 @@
+[
+    {
+        "id": 1,
+        "timestamp": "2026-10-10 10:30:00",
+        "name": "Rutvi Patel",
+        "email": "rutvi.patel@studenthub.edu",
+        "phone": "9876543210",
+        "course": "B.Tech IT",
+        "year": "3rd Year",
+        "gender": "Female",
+        "type": "Registration"
+    },
+    {
+        "id": 2,
+        "timestamp": "2026-10-10 11:00:00",
+        "name": "Aarav Shah",
+        "email": "aarav.shah@studenthub.edu",
+        "phone": "9812345678",
+        "course": "B.Tech CE",
+        "year": "2nd Year",
+        "gender": "Male",
+        "type": "Registration"
+    },
+    {
+        "id": 1792906214,
+        "timestamp": "2026-10-25 06:30:14",
+        "name": "rutvi kariya",
+        "email": "25it000@charusat.edu.in",
+        "phone": "6987745631",
+        "course": "B.Tech IT",
+        "year": "3rd Year",
+        "gender": "Female",
+        "type": "Registration"
+    },
+    {
+        "id": 1792906248,
+        "timestamp": "2026-10-25 06:30:48",
+        "name": "abcdd",
+        "email": "25it000@charusat.edu.in",
+        "phone": "6987745631",
+        "course": "B.Tech IT",
+        "year": "3rd Year",
+        "gender": "Female",
+        "type": "Registration"
+    }
+]
