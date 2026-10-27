@@ -212,17 +212,22 @@ nav {
 /* 4. Breadcrumbs (Practical 2, 3) */
 .breadcrumbs {
   max-width: 1200px;
-  margin: 16px auto 0;
-  padding: 0 24px;
+  width: 100%;
+  margin: 24px auto 12px auto;
+  padding: 10px 24px;
   display: flex;
   align-items: center;
   gap: 8px;
   font-size: 0.875rem;
   color: var(--text-muted);
+  position: relative;
+  z-index: 10;
 }
 .breadcrumbs a {
   color: var(--primary);
   text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
 }
 .breadcrumbs a:hover {
   text-decoration: underline;

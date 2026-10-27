@@ -105,11 +105,11 @@ CREATE TABLE `remember_tokens` (
 -- Admin account: admin@studenthub.com / Admin@123
 -- Student account: student@studenthub.com / Student@123
 INSERT INTO `users` (`id`, `full_name`, `email`, `phone`, `password_hash`, `role`, `course`, `year`, `gender`, `status`) VALUES
-(1, 'System Administrator', 'admin@studenthub.com', '9876543200', '$2y$10$wGxeFtL4olcZdixc/4RTkuGqHgQjHKeEScWYhAiSYZW5w//7.tRc6', 'admin', 'Faculty Administration', 'Faculty', 'Other', 'Active'),
-(2, 'Rutvi Patel', 'student@studenthub.com', '9876543210', '$2y$10$WTya1jX9iQp33Mp6BHU2FugjPIwF.Ny/9WnYAppSdI7TFcAscnxkC', 'student', 'B.Tech IT', '3rd Year', 'Female', 'Active'),
-(3, 'Aarav Shah', 'aarav.shah@studenthub.edu', '9812345678', '$2y$10$WTya1jX9iQp33Mp6BHU2FugjPIwF.Ny/9WnYAppSdI7TFcAscnxkC', 'student', 'B.Tech CE', '2nd Year', 'Male', 'Active'),
-(4, 'Diya Mehta', 'diya.mehta@studenthub.edu', '9823456789', '$2y$10$WTya1jX9iQp33Mp6BHU2FugjPIwF.Ny/9WnYAppSdI7TFcAscnxkC', 'student', 'B.Tech AIML', '3rd Year', 'Female', 'Active'),
-(5, 'Kabir Verma', 'kabir.verma@studenthub.edu', '9834567890', '$2y$10$WTya1jX9iQp33Mp6BHU2FugjPIwF.Ny/9WnYAppSdI7TFcAscnxkC', 'student', 'B.Tech IT', '4th Year', 'Male', 'Inactive');
+(1, 'System Administrator', 'admin@studenthub.com', '9876543200', '$2y$10$GApENta/2h0mvcRXhloC1uEbgN2Mvb/6ulWyWoBtJThk0vm3PWS.O', 'admin', 'Faculty Administration', 'Faculty', 'Other', 'Active'),
+(2, 'Rutvi Patel', 'student@studenthub.com', '9876543210', '$2y$10$YLikvQPBheYLdgRqlttWOOv4LBQQ63OZR.Ep5TR3IIZfvnrfM2MZm', 'student', 'B.Tech IT', '3rd Year', 'Female', 'Active'),
+(3, 'Aarav Shah', 'aarav.shah@studenthub.edu', '9812345678', '$2y$10$YLikvQPBheYLdgRqlttWOOv4LBQQ63OZR.Ep5TR3IIZfvnrfM2MZm', 'student', 'B.Tech CE', '2nd Year', 'Male', 'Active'),
+(4, 'Diya Mehta', 'diya.mehta@studenthub.edu', '9823456789', '$2y$10$YLikvQPBheYLdgRqlttWOOv4LBQQ63OZR.Ep5TR3IIZfvnrfM2MZm', 'student', 'B.Tech AIML', '3rd Year', 'Female', 'Active'),
+(5, 'Kabir Verma', 'kabir.verma@studenthub.edu', '9834567890', '$2y$10$YLikvQPBheYLdgRqlttWOOv4LBQQ63OZR.Ep5TR3IIZfvnrfM2MZm', 'student', 'B.Tech IT', '4th Year', 'Male', 'Inactive');
 
 -- Seed Events
 INSERT INTO `events` (`id`, `title`, `category`, `event_date`, `event_time`, `venue`, `description`, `poster_image`, `max_seats`, `status`, `created_by`) VALUES

@@ -70,4 +70,25 @@ function get_db_connection() {
 function get_mysqli_connection() {
     return Database::getInstance()->getMySQLi();
 }
+
+/**
+ * Record an entry into Audit Logs (Practical 14 & Security Logging)
+ * Accessible across all backend scripts via db.php
+ */
+if (!function_exists('record_audit_log')) {
+    function record_audit_log($userId, $action, $details, $pdo = null) {
+        $ip = $_SERVER['REMOTE_ADDR'] ?? '127.0.0.1';
+        if (!$pdo) {
+            $pdo = get_db_connection();
+        }
+        if ($pdo) {
+            try {
+                $stmt = $pdo->prepare("INSERT INTO audit_logs (user_id, action, details, ip_address) VALUES (?, ?, ?, ?)");
+                $stmt->execute([$userId, $action, $details, $ip]);
+            } catch (Exception $e) {
+                error_log("Audit log failed: " . $e->getMessage());
+            }
+        }
+    }
+}
 ?>
