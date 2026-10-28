@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Practical 13 - Asynchronous AJAX and Fetch-Based CRUD Without Page Reload.">
+  <title>AJAX Event Management - Practical 13</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="brand-logo" aria-label="StudentHub Home">
+        <span style="font-size: 1.8rem;">🎓</span>
+        <span>Student<span class="brand-badge">Hub</span></span>
+      </a>
+
+      <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle navigation" aria-expanded="false">
+        ☰
+      </button>
+
+      <nav id="main-nav" aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="events.html">Events Catalog</a></li>
+          <li><a href="ajax-events.html" class="active">AJAX CRUD</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="admin.html">Admin</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle dark mode">🌙 Dark</button>
+        <a href="events.html" class="btn btn-outline btn-sm">Standard Events &rarr;</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs" aria-label="Breadcrumb">
+    <a href="index.html">Home</a> &gt; <a href="events.html">Events</a> &gt; <span>AJAX Fetch CRUD (Practical 13)</span>
+  </div>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <div style="margin-bottom: 24px;">
+      <span class="badge badge-primary">Practical 13: Fetch API & PHP JSON API</span>
+      <h1 style="margin-top: 6px;">Live Asynchronous Event CRUD</h1>
+      <p style="color: var(--text-muted);">
+        Perform Create, Read, Update, and Delete operations seamlessly without page reloads. Handled by <code>js/ajax-crud.js</code> and <code>php/api/events.php</code>.
+      </p>
+    </div>
+
+    <!-- Live Status Alert -->
+    <div id="ajax-status-message" class="alert alert-info" style="display: none;" role="status"></div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1.6fr; gap: 30px; align-items: flex-start;">
+      <!-- Form Panel -->
+      <section class="card">
+        <h3 id="form-heading" style="margin-bottom: 4px;">Add / Edit Event (AJAX)</h3>
+        <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 18px;">Form dispatches async JSON payload.</p>
+
+        <form id="ajax-event-form">
+          <div class="form-group">
+            <label class="form-label" for="ajax-title">Event Title *</label>
+            <input type="text" id="ajax-title" class="form-control" placeholder="e.g. AI & Robotics Symposium" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="ajax-category">Category *</label>
+              <select id="ajax-category" class="form-control" required>
+                <option value="Technical">Technical</option>
+                <option value="Workshop">Workshop</option>
+                <option value="Cultural">Cultural</option>
+                <option value="Sports">Sports</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="ajax-date">Date *</label>
+              <input type="date" id="ajax-date" class="form-control" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="ajax-venue">Venue *</label>
+              <input type="text" id="ajax-venue" class="form-control" placeholder="Auditorium B" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="ajax-seats">Max Capacity *</label>
+              <input type="number" id="ajax-seats" class="form-control" value="100" min="10" max="1000" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="ajax-desc">Description</label>
+            <textarea id="ajax-desc" class="form-control" rows="3" placeholder="Brief event summary..."></textarea>
+          </div>
+
+          <div style="display: flex; gap: 10px; margin-top: 10px;">
+            <button type="submit" id="ajax-submit-btn" class="btn btn-primary" style="flex: 1;">
+              Add Event (AJAX)
+            </button>
+            <button type="button" id="ajax-cancel-edit" class="btn btn-secondary" style="display: none;">
+              Cancel
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Events Live Table Panel -->
+      <section class="card">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+          <div>
+            <h3 style="margin-bottom: 2px;">Active Events Catalog</h3>
+            <span id="ajax-loading" style="display: none; color: var(--primary); font-size: 0.85rem; font-weight: 600;">⏳ Syncing via Fetch API...</span>
+          </div>
+          <button class="btn btn-outline btn-sm" onclick="ajaxManager.loadEvents()">🔄 Refresh Data</button>
+        </div>
+
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Date</th>
+                <th>Capacity</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="ajax-events-tbody">
+              <!-- Dynamically populated by js/ajax-crud.js -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-bottom">
+      &copy; 2026-27 StudentHub Portal. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/ajax-crud.js"></script>
+</body>
+</html>
